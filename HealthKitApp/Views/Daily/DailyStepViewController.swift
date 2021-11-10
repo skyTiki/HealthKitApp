@@ -18,7 +18,7 @@ class DailyStepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        HealthKitModel.requestAuthorization { success in
+        HealthData.requestAuthorization { success in
             if success {
                 print("歩数を取得できます")
             } else {
@@ -33,7 +33,7 @@ class DailyStepViewController: UIViewController {
         let endDate = Date()
         let startOfDate = Calendar.current.startOfDay(for: endDate)
         
-        HealthKitModel.getHealthKitStepCount(withStart: startOfDate, end: endDate) { results in
+        HealthData.getHealthKitStepCount(withStart: startOfDate, end: endDate) { results in
             guard let results = results as? [HKQuantitySample] else { return }
             print("results", results.count , results)
             

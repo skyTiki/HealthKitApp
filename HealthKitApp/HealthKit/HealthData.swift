@@ -1,5 +1,5 @@
 //
-//  HealthKitModel.swift
+//  HealthData.swift
 //  HealthKitApp
 //
 //  Created by S-wayMock2 on 2021/11/10.
@@ -8,7 +8,7 @@
 import Foundation
 import HealthKit
 
-class HealthKitModel {
+class HealthData {
     
     static let healthStore = HKHealthStore()
     
