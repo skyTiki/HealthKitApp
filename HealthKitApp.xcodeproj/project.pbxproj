@@ -18,6 +18,8 @@
 		2A73F8F5273B64790048A22D /* HealthKitAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F8F4273B64790048A22D /* HealthKitAppUITestsLaunchTests.swift */; };
 		2A73F906273B8E210048A22D /* DailyStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F905273B8E210048A22D /* DailyStep.storyboard */; };
 		2A73F908273B8E300048A22D /* DailyStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F907273B8E300048A22D /* DailyStepViewController.swift */; };
+		2A73F90C273B8F800048A22D /* HealthKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A73F90A273B8F800048A22D /* HealthKitUI.framework */; };
+		2A73F90D273B8F800048A22D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A73F90B273B8F800048A22D /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		2A73F8F4273B64790048A22D /* HealthKitAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2A73F905273B8E210048A22D /* DailyStep.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyStep.storyboard; sourceTree = "<group>"; };
 		2A73F907273B8E300048A22D /* DailyStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepViewController.swift; sourceTree = "<group>"; };
+		2A73F90A273B8F800048A22D /* HealthKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKitUI.framework; path = System/Library/Frameworks/HealthKitUI.framework; sourceTree = SDKROOT; };
+		2A73F90B273B8F800048A22D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A73F90C273B8F800048A22D /* HealthKitUI.framework in Frameworks */,
+				2A73F90D273B8F800048A22D /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,7 @@
 				2A73F8E7273B64790048A22D /* HealthKitAppTests */,
 				2A73F8F1273B64790048A22D /* HealthKitAppUITests */,
 				2A73F8CF273B64770048A22D /* Products */,
+				2A73F909273B8F800048A22D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +170,15 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2A73F909273B8F800048A22D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A73F90B273B8F800048A22D /* HealthKit.framework */,
+				2A73F90A273B8F800048A22D /* HealthKitUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
