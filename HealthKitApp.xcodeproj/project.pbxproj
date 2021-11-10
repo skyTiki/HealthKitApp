@@ -21,6 +21,8 @@
 		2A73F90C273B8F800048A22D /* HealthKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A73F90A273B8F800048A22D /* HealthKitUI.framework */; };
 		2A73F90D273B8F800048A22D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A73F90B273B8F800048A22D /* HealthKit.framework */; };
 		2A73F90F273B8FEE0048A22D /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F90E273B8FEE0048A22D /* HealthKitModel.swift */; };
+		2A73F913273B9F410048A22D /* WeeklyStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F912273B9F410048A22D /* WeeklyStepViewController.swift */; };
+		2A73F915273B9F4B0048A22D /* WeeklyStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F914273B9F4B0048A22D /* WeeklyStep.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		2A73F90B273B8F800048A22D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2A73F90E273B8FEE0048A22D /* HealthKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
 		2A73F910273B99BD0048A22D /* HealthKitApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitApp.entitlements; sourceTree = "<group>"; };
+		2A73F912273B9F410048A22D /* WeeklyStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStepViewController.swift; sourceTree = "<group>"; };
+		2A73F914273B9F4B0048A22D /* WeeklyStep.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeeklyStep.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +150,8 @@
 		2A73F901273B8DD30048A22D /* TabView */ = {
 			isa = PBXGroup;
 			children = (
-				2A73F8D5273B64770048A22D /* TabBarController.swift */,
 				2A73F8D7273B64770048A22D /* Main.storyboard */,
+				2A73F8D5273B64770048A22D /* TabBarController.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				2A73F903273B8DF90048A22D /* Daily */,
+				2A73F911273B9F120048A22D /* Weekly */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +189,15 @@
 				2A73F90A273B8F800048A22D /* HealthKitUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A73F911273B9F120048A22D /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				2A73F914273B9F4B0048A22D /* WeeklyStep.storyboard */,
+				2A73F912273B9F410048A22D /* WeeklyStepViewController.swift */,
+			);
+			path = Weekly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 			files = (
 				2A73F8DE273B64780048A22D /* LaunchScreen.storyboard in Resources */,
 				2A73F8DB273B64780048A22D /* Assets.xcassets in Resources */,
+				2A73F915273B9F4B0048A22D /* WeeklyStep.storyboard in Resources */,
 				2A73F906273B8E210048A22D /* DailyStep.storyboard in Resources */,
 				2A73F8D9273B64770048A22D /* Main.storyboard in Resources */,
 			);
@@ -321,6 +336,7 @@
 				2A73F8D6273B64770048A22D /* TabBarController.swift in Sources */,
 				2A73F90F273B8FEE0048A22D /* HealthKitModel.swift in Sources */,
 				2A73F908273B8E300048A22D /* DailyStepViewController.swift in Sources */,
+				2A73F913273B9F410048A22D /* WeeklyStepViewController.swift in Sources */,
 				2A73F8D2273B64770048A22D /* AppDelegate.swift in Sources */,
 				2A73F8D4273B64770048A22D /* SceneDelegate.swift in Sources */,
 			);

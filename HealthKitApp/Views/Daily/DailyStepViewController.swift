@@ -13,7 +13,7 @@ class DailyStepViewController: UIViewController {
     
     @IBOutlet weak var stepCountLabel: UILabel!
     
-    var stepCount = 0.0
+    var stepDailyCount = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +30,10 @@ class DailyStepViewController: UIViewController {
     
     @IBAction func tappedGetStepCountButton(_ sender: Any) {
         
-        let nowDate = Date()
-        let startOfDate = Calendar.current.startOfDay(for: nowDate)
-//        let startOfDate = Calendar.current.date(byAdding: .day, value: -9, to: nowDate)!
+        let endDate = Date()
+        let startOfDate = Calendar.current.startOfDay(for: endDate)
         
-        
-        HealthKitModel.getHealthKitStepCount(withStart: startOfDate, end: nowDate) { results in
+        HealthKitModel.getHealthKitStepCount(withStart: startOfDate, end: endDate) { results in
             guard let results = results as? [HKQuantitySample] else { return }
             print("results", results.count , results)
             
@@ -45,11 +43,11 @@ class DailyStepViewController: UIViewController {
                 stepCountSum += results[num].quantity.doubleValue(for: .count())
             }
             
-            self.stepCount = stepCountSum
+            self.stepDailyCount = stepCountSum
              
             // 画面に反映
             DispatchQueue.main.async {
-                self.stepCountLabel.text = "\(self.stepCount)"
+                self.stepCountLabel.text = "\(self.stepDailyCount)"
             }
         }
         
