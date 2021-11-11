@@ -40,25 +40,20 @@ class HealthData {
         
     }
     
-    static func getHealthKitStepCount(withStart: Date, end: Date, completion: @escaping(_ results : [HKSample]) -> Void) {
+    static func getStepCountSum(withStart: Date, end: Date, completion: @escaping(_ results : HKStatistics) -> Void) {
         
         print(withStart,"~", end,"までの歩数データを取得します")
         
         let predicate = HKQuery.predicateForSamples(withStart: withStart, end: end, options: [])
-        // 歩数カウント
-        let queryDescriptor: [HKQueryDescriptor] = [HKQueryDescriptor(sampleType: HKQuantityType(.stepCount), predicate: predicate)]
-                                                
-        let query = HKSampleQuery(queryDescriptors: queryDescriptor, limit: HKObjectQueryNoLimit, sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)]) { query, results, error in
+        
+        let query = HKStatisticsQuery(quantityType: HKQuantityType(.stepCount), quantitySamplePredicate: predicate, options: .cumulativeSum) { query, results, error in
             if let error = error {
-                fatalError("HKSampleQuery error:\(error.localizedDescription)")
+                fatalError("HKStatisticsQuery error:\(error.localizedDescription)")
             }
             
             if let results = results {
                 completion(results)
-            } else {
-                fatalError("HKSampleQuery results was nil")
             }
-            
         }
         
         healthStore.execute(query)

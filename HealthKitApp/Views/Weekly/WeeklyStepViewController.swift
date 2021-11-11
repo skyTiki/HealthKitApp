@@ -19,21 +19,21 @@ class WeeklyStepViewController: UIViewController {
         let endDate = Date()
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
         
-        HealthData.getHealthKitStepCount(withStart: startDate, end: endDate) { results in
-        
-            guard let results = results as? [HKQuantitySample] else { return }
-            print(results)
-            
-            var stepCountSum = 0.0
-            for num in 0..<results.count {
-                stepCountSum += results[num].quantity.doubleValue(for: .count())
-            }
-            
-            self.stepWeeklyCount = stepCountSum
-            
-            print(self.stepWeeklyCount)
-            
-        }
+//        HealthData.getHealthKitStepCount(withStart: startDate, end: endDate) { results in
+//        
+//            guard let results = results as? [HKQuantitySample] else { return }
+//            print(results)
+//            
+//            var stepCountSum = 0.0
+//            for num in 0..<results.count {
+//                stepCountSum += results[num].quantity.doubleValue(for: .count())
+//            }
+//            
+//            self.stepWeeklyCount = stepCountSum
+//            
+//            print(self.stepWeeklyCount)
+//            
+//        }
         
     }
     

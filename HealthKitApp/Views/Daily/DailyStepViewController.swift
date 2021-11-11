@@ -31,27 +31,19 @@ class DailyStepViewController: UIViewController {
     @IBAction func tappedGetStepCountButton(_ sender: Any) {
         
         let endDate = Date()
-        let startOfDate = Calendar.current.startOfDay(for: endDate)
+        let startDate = Calendar.current.startOfDay(for: endDate)
         
-        HealthData.getHealthKitStepCount(withStart: startOfDate, end: endDate) { results in
-            guard let results = results as? [HKQuantitySample] else { return }
-            print("results", results.count , results)
+        HealthData.getStepCountSum(withStart: startDate, end: endDate) { results in
+            print("results",  results)
             
-            // 歩数の合計
-            var stepCountSum = 0.0
-            for num in 0..<results.count {
-                stepCountSum += results[num].quantity.doubleValue(for: .count())
-            }
-            
-            self.stepDailyCount = stepCountSum
+            // 歩数の合計(明示的に関数内でcumulativeSumオプションを指定しているため強制アンラップする)
+            self.stepDailyCount = results.sumQuantity()!.doubleValue(for: .count())
              
             // 画面に反映
             DispatchQueue.main.async {
                 self.stepCountLabel.text = "\(self.stepDailyCount)"
             }
         }
-        
-        
     }
     
 }
