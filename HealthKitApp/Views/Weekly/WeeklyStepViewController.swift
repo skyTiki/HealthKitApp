@@ -16,27 +16,13 @@ class WeeklyStepViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let endDate = Date()
-        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
+        let nowDate = Date()
+        let startOfNowDate = Calendar.current.startOfDay(for: nowDate)
+        let startDate = Calendar.current.date(byAdding: .day, value: -6, to: startOfNowDate)!
         
-//        HealthData.getHealthKitStepCount(withStart: startDate, end: endDate) { results in
-//        
-//            guard let results = results as? [HKQuantitySample] else { return }
-//            print(results)
-//            
-//            var stepCountSum = 0.0
-//            for num in 0..<results.count {
-//                stepCountSum += results[num].quantity.doubleValue(for: .count())
-//            }
-//            
-//            self.stepWeeklyCount = stepCountSum
-//            
-//            print(self.stepWeeklyCount)
-//            
-//        }
-        
+        HealthData.getStepCountSumPerDay(withStart: startDate, end: nowDate) { results in
+            print("実行完了")
+            results.forEach { print("step", $0.sumQuantity()!) }
+        }
     }
-    
-    
-    
 }

@@ -38,7 +38,7 @@ class DailyStepViewController: UIViewController {
             
             // 歩数の合計(明示的に関数内でcumulativeSumオプションを指定しているため強制アンラップする)
             self.stepDailyCount = results.sumQuantity()!.doubleValue(for: .count())
-             
+            
             // 画面に反映
             DispatchQueue.main.async {
                 self.stepCountLabel.text = "\(self.stepDailyCount)"
