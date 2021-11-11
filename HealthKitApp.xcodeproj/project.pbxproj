@@ -23,8 +23,6 @@
 		2A73F90F273B8FEE0048A22D /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F90E273B8FEE0048A22D /* HealthData.swift */; };
 		2A73F913273B9F410048A22D /* WeeklyStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F912273B9F410048A22D /* WeeklyStepViewController.swift */; };
 		2A73F915273B9F4B0048A22D /* WeeklyStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F914273B9F4B0048A22D /* WeeklyStep.storyboard */; };
-		2A73F918273CFC410048A22D /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2A73F917273CFC410048A22D /* Charts */; };
-		2A73F91A273CFC410048A22D /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A73F919273CFC410048A22D /* ChartsDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A73F90C273B8F800048A22D /* HealthKitUI.framework in Frameworks */,
-				2A73F918273CFC410048A22D /* Charts in Frameworks */,
 				2A73F90D273B8F800048A22D /* HealthKit.framework in Frameworks */,
-				2A73F91A273CFC410048A22D /* ChartsDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,10 +216,6 @@
 			dependencies = (
 			);
 			name = HealthKitApp;
-			packageProductDependencies = (
-				2A73F917273CFC410048A22D /* Charts */,
-				2A73F919273CFC410048A22D /* ChartsDynamic */,
-			);
 			productName = HealthKitApp;
 			productReference = 2A73F8CE273B64770048A22D /* HealthKitApp.app */;
 			productType = "com.apple.product-type.application";
@@ -296,9 +288,6 @@
 				Base,
 			);
 			mainGroup = 2A73F8C5273B64770048A22D;
-			packageReferences = (
-				2A73F916273CFC410048A22D /* XCRemoteSwiftPackageReference "Charts" */,
-			);
 			productRefGroup = 2A73F8CF273B64770048A22D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -715,30 +704,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2A73F916273CFC410048A22D /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2A73F917273CFC410048A22D /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A73F916273CFC410048A22D /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-		2A73F919273CFC410048A22D /* ChartsDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A73F916273CFC410048A22D /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = ChartsDynamic;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A73F8C6273B64770048A22D /* Project object */;
 }
