@@ -13,8 +13,6 @@ class WeeklyStepViewController: UIViewController {
     
     @IBOutlet weak var lineChartView: LineChartView!
     
-    var stepWeeklyCount = 0.0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,10 +43,9 @@ class WeeklyStepViewController: UIViewController {
     // データの作成処理
     private func setChartViewData(data: [HKStatistics]) -> LineChartDataSet {
         
-        var entries: [ChartDataEntry] = []
-        
-        for (index, statistic) in data.enumerated() {
-            entries.append(ChartDataEntry(x: Double(index), y: statistic.sumQuantity()!.doubleValue(for: .count())))
+        // データの変換
+        let entries = data.enumerated().map {
+            ChartDataEntry(x: Double($0.offset), y: $0.element.sumQuantity()!.doubleValue(for: .count()))
         }
         
         // データセットの設定
@@ -69,7 +66,6 @@ class WeeklyStepViewController: UIViewController {
     
     // ChartViewの設定処理
     private func configureChartView(lineChartDataSet: LineChartDataSet) {
-
         
         lineChartView.data = LineChartData(dataSet: lineChartDataSet)
         lineChartView.backgroundColor = .systemGray3
@@ -83,7 +79,9 @@ class WeeklyStepViewController: UIViewController {
         // X軸
         lineChartView.xAxis.labelPosition = .bottom //下に目盛りを表示
         lineChartView.xAxis.labelTextColor = .gray
-        
+        // X軸の目盛りの値設定
+        let formatter = DateValueFormatter(startDate: Date())
+        lineChartView.xAxis.valueFormatter = formatter
         
     }
 }

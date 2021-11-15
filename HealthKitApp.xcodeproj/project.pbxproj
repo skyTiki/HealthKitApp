@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A56F6A32742288200835900 /* DateValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A56F6A22742288200835900 /* DateValueFormatter.swift */; };
 		2A73F8D2273B64770048A22D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F8D1273B64770048A22D /* AppDelegate.swift */; };
 		2A73F8D4273B64770048A22D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F8D3273B64770048A22D /* SceneDelegate.swift */; };
 		2A73F8D6273B64770048A22D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73F8D5273B64770048A22D /* TabBarController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		13A464CEE8BA73CEF688B70B /* Pods-HealthKitApp-HealthKitAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitApp-HealthKitAppUITests.release.xcconfig"; path = "Target Support Files/Pods-HealthKitApp-HealthKitAppUITests/Pods-HealthKitApp-HealthKitAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2A56F6A22742288200835900 /* DateValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValueFormatter.swift; sourceTree = "<group>"; };
 		2A73F8CE273B64770048A22D /* HealthKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A73F8D1273B64770048A22D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A73F8D3273B64770048A22D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,8 +120,15 @@
 				6D25AE7A0580271E7B52B616 /* Pods-HealthKitAppTests.debug.xcconfig */,
 				8774744A3434ED1522FBF0B3 /* Pods-HealthKitAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2A56F6A12742287100835900 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				2A56F6A22742288200835900 /* DateValueFormatter.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		2A73F8C5273B64770048A22D = {
@@ -153,6 +162,7 @@
 				2A73F901273B8DD30048A22D /* TabView */,
 				2A73F902273B8DE90048A22D /* Views */,
 				2A73F904273B8E030048A22D /* HealthKit */,
+				2A56F6A12742287100835900 /* Charts */,
 				2A73F8DA273B64780048A22D /* Assets.xcassets */,
 				2A73F8DC273B64780048A22D /* LaunchScreen.storyboard */,
 				2A73F8DF273B64780048A22D /* Info.plist */,
@@ -474,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A56F6A32742288200835900 /* DateValueFormatter.swift in Sources */,
 				2A73F8D6273B64770048A22D /* TabBarController.swift in Sources */,
 				2A73F90F273B8FEE0048A22D /* HealthData.swift in Sources */,
 				2A73F908273B8E300048A22D /* DailyStepViewController.swift in Sources */,
