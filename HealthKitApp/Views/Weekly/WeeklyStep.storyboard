@@ -15,11 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-tt-MlO" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z0A-tt-MlO" secondAttribute="trailing" id="GbD-fG-Lq7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="z0A-tt-MlO" secondAttribute="bottom" id="Jwj-d3-vpr"/>
+                            <constraint firstItem="z0A-tt-MlO" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QmN-lZ-Mz4"/>
+                            <constraint firstItem="z0A-tt-MlO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pK8-Qn-xmj"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weekly" image="arrow.up.forward" catalog="system" id="HbT-0e-bJj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="z0A-tt-MlO" id="QYq-Ll-1jd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
