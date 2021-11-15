@@ -15,8 +15,6 @@ class WeeklyStepViewController: UIViewController {
     
     var stepWeeklyCount = 0.0
     
-    var entries: [ChartDataEntry] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,25 +29,61 @@ class WeeklyStepViewController: UIViewController {
             
             DispatchQueue.main.async {
                 
-                self.setChartViewData(data: results)
-                self.updateCharView()
+                self.updateChartView(data: results)
             }
         }
     }
     
-    
-    private func setChartViewData(data: [HKStatistics]) {
-        
-        for (index, statistic) in data.enumerated() {
-            self.entries.append(ChartDataEntry(x: Double(index), y: statistic.sumQuantity()!.doubleValue(for: .count())))
-        }
+    // ChartViewの更新
+    private func updateChartView(data: [HKStatistics]) {
+        // データセットの作成
+        let lineChartDataSet = setChartViewData(data: data)
+        // ChartViewに設定
+        configureChartView(lineChartDataSet: lineChartDataSet)
     }
     
-    
-    private func updateCharView() {
-        let chartDataSet = LineChartDataSet(entries: entries, label: "歩数")
+    // データの作成処理
+    private func setChartViewData(data: [HKStatistics]) -> LineChartDataSet {
         
-        lineChartView.data = LineChartData(dataSet: chartDataSet)
+        var entries: [ChartDataEntry] = []
+        
+        for (index, statistic) in data.enumerated() {
+            entries.append(ChartDataEntry(x: Double(index), y: statistic.sumQuantity()!.doubleValue(for: .count())))
+        }
+        
+        // データセットの設定
+        let lineChartDataSet = LineChartDataSet(entries: entries, label: "歩数")
+        lineChartDataSet.lineWidth = 1.5
+        lineChartDataSet.mode = .cubicBezier // グラフを曲線に変更
+        lineChartDataSet.drawCirclesEnabled = false // 各データに丸ポチを設定しない
+        lineChartDataSet.setColor(.cyan) // 線の色
+        
+        // 面の設定
+        lineChartDataSet.fill = Fill(color: .cyan)
+        lineChartDataSet.fillAlpha = 0.2
+        lineChartDataSet.drawFilledEnabled = true
+        
+        
+        return lineChartDataSet
+    }
+    
+    // ChartViewの設定処理
+    private func configureChartView(lineChartDataSet: LineChartDataSet) {
+
+        
+        lineChartView.data = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.backgroundColor = .systemGray3
+        lineChartView.data?.setValueTextColor(.white)
+        lineChartView.data?.setValueFont(.systemFont(ofSize: 14, weight: .bold))
+        
+        // Y軸
+        lineChartView.rightAxis.enabled = false // 右側のy軸の目盛りを削除
+        lineChartView.leftAxis.labelTextColor = .gray
+        
+        // X軸
+        lineChartView.xAxis.labelPosition = .bottom //下に目盛りを表示
+        lineChartView.xAxis.labelTextColor = .gray
+        
         
     }
 }
