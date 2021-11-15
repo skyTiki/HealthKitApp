@@ -12,6 +12,7 @@ import HealthKit
 class WeeklyStepViewController: UIViewController {
     
     @IBOutlet weak var lineChartView: LineChartView!
+    var startDate: Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class WeeklyStepViewController: UIViewController {
         
         let nowDate = Date()
         let startOfNowDate = Calendar.current.startOfDay(for: nowDate)
-        let startDate = Calendar.current.date(byAdding: .day, value: -6, to: startOfNowDate)!
+        startDate = Calendar.current.date(byAdding: .day, value: -6, to: startOfNowDate)!
         
         HealthData.getStepCountSumPerDay(withStart: startDate, end: nowDate) { results in
             print("実行完了")
@@ -80,7 +81,7 @@ class WeeklyStepViewController: UIViewController {
         lineChartView.xAxis.labelPosition = .bottom //下に目盛りを表示
         lineChartView.xAxis.labelTextColor = .gray
         // X軸の目盛りの値設定
-        let formatter = DateValueFormatter(startDate: Date())
+        let formatter = DateValueFormatter(startDate: startDate)
         lineChartView.xAxis.valueFormatter = formatter
         
     }

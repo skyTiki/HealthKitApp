@@ -18,7 +18,7 @@ class DateValueFormatter: IAxisValueFormatter {
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         // 一週間前から設定
-        let modifiedDate = Calendar.current.date(byAdding: .day, value: Int(value - 7), to: startDate)!
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: Int(value), to: startDate)!
         dateFormatter.dateFormat = "M/d"
         
         return dateFormatter.string(from: modifiedDate)
